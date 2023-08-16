@@ -6,4 +6,7 @@ Colours:
 #218380
 #73D2DE
 
-In the 
+TODO
+
+- Need to add in metatags to blog page, individual blog pages
+- need to have a database to contain the detail for each blog card.
