@@ -4,14 +4,14 @@ export default function Home() {
   return (
 <main>
     <section>
-        <p>Welcome to Wanderlust Chronicles, your passport to adventures unknown and tales untold. Whether you're a seasoned globetrotter or a dreamer planning your first escape, you'll find a world of inspiration here.</p>
+        <p>Welcome to Wanderlust Chronicles, your passport to adventures unknown and tales untold. Whether you&apos;re a seasoned globetrotter or a dreamer planning your first escape, you&apos;ll find a world of inspiration here.</p>
     </section>
 
     <section>
         <h2>Why Wander with Us?</h2>
         <ul>
             <li><strong>Real Stories, Real Travels:</strong> Journey with us through personal anecdotes, breathtaking photos, and local secrets.</li>
-            <li><strong>Off-the-Beaten-Path:</strong> While we love the world's iconic sights, we also venture where few travelers tread.</li>
+            <li><strong>Off-the-Beaten-Path:</strong> While we love the world&apos;s iconic sights, we also venture where few travelers tread.</li>
             <li><strong>Sustainable Adventures:</strong> We believe in traveling with a light footprint. Learn how to explore the world while cherishing and preserving its beauty.</li>
         </ul>
     </section>
