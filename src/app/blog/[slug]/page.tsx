@@ -56,10 +56,10 @@ export default function BlogPostPage({ params }: BlogPostParams) {
                     <div>
                         <Image
                             className="mb-10 rounded-sm"
-                            src={`/images/${post.title}.jpg`}
+                            src={`/images/${post.title.charAt(0).toLowerCase() + post.title.slice(1)}.jpg`}
                             height={700}
                             width={700}
-                            alt={`Blog Post ${post.title.charAt(0).toLowerCase() + post.title.slice(1)} Image`}
+                            alt={`Blog Post ${post.title} Image`}
                             // this doesnt work below
                             placeholder="blur"
                             blurDataURL="images/blur.jpg"
