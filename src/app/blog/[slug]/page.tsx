@@ -48,8 +48,9 @@ export default function BlogPostPage({ params }: BlogPostParams) {
         <main>
             <div className='px-20 border bg-[#fafef] shadow rounded-lg mb-10'>
                 <section className='mb-20'>
-                    <h1 className={`${dancing_script.className} text-4xl font-bold tracking-tighter -skew-y-3`} >{post?.title}</h1>
-                    <h2 className={`${dancing_script.className} text-2xl font-bold tracking-tighter -skew-y-3`} >{post?.month} {post?.year}</h2>
+                
+                    <h1 className={`${dancing_script.className} text-4xl md:text-5xl font-bold -skew-y-3`} >{post?.title}</h1>
+                    <h2 className={`${dancing_script.className} text-2xl mt-2 font-bold -skew-y-3`} >{post?.month} {post?.year}</h2>
                 </section>
 
                 <section className=" px-10 grid grid-cols-2 gap-5">

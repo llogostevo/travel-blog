@@ -37,7 +37,7 @@ export default function Blog() {
             {/* Comp end */}
 
             <section className='mb-20'>
-                <h1 className={`${dancing_script.className} text-4xl md:text-5xl font-bold tracking-tighter -skew-y-3`} >Blog Posts - <span className="text-teal">all</span></h1>
+                <h1 className={`${dancing_script.className} text-4xl md:text-5xl font-bold -skew-y-3`} >Blog Posts - <span className="text-teal">all</span></h1>
             </section>
 
             <section>
