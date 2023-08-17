@@ -2,6 +2,7 @@ import { dancing_script } from "@/app/layout";
 import Image from "next/image";
 import { getPostBycategorySlug, getPosts, getCategories } from "@/lib/posts";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 
 type BlogCatParams = {
@@ -10,27 +11,26 @@ type BlogCatParams = {
     }
 }
 
-// get the unique category 
-const categories = getCategories();
-
-
-// NOT CLEAR IF THIS IS THE CORRECT WAY
 // this builds all the params for ALL blog posts when the website is deployed
-export function generateStaticParams(){
-    const posts = getPosts()
+export function generateStaticParams({params}: BlogCatParams){
+    const categories = getCategories();
 
     // generateStaticParams expcts you to output an array of objects 
-    return posts.map((post)=>{
+    return categories.map((category)=>{
         return {
-            catslug: post.category,
+            catslug: category,
         };
     });
 }
 
 export default function CatSlug({params}: BlogCatParams) {
     const posts = getPostBycategorySlug(params.catslug)
+    const categories = getCategories();
+    
     console.log(params.catslug)
-    console.log(posts)
+
+    // if the catslug == value in url 
+
     return (
         <main className="min-h-screen">
         
@@ -38,15 +38,24 @@ export default function CatSlug({params}: BlogCatParams) {
         <h2 className="text-xl font-bold mb-4">Filter by category</h2>
         <div>
             <div className="flex flex-row gap-4">
+
+            
                         <div className="flex items-center">
-                            <button className="px-2 py-1 text-xs bg-teal hover:bg-nonphotblue text-white rounded">
-                            <Link href={`/blog/`}><span>All</span></Link>
+                            <button className={`px-2 py-1 text-xs bg-teal hover:bg-nonphotblue text-white rounded`}>
+                                <Link href={`/blog/`}><span>All</span></Link>
                             </button>
                         </div>
-                {categories.map((category) => {
+    
+
+
+                        
+                {categories.map((category) => 
+                {
+                    const buttonColor = category === params.catslug ? 'bg-red-500' : 'bg-teal';
+
                     return (
                         <div key={category} className="flex items-center">
-                            <button className="px-2 py-1 text-xs bg-teal hover:bg-nonphotblue text-white rounded">
+                            <button className={`px-2 py-1 text-xs ${buttonColor} hover:bg-nonphotblue text-white rounded`}>
                             <Link href={`/blog/categories/${category}`}><span>{category.toUpperCase()}</span></Link>
                             </button>
                         </div>
@@ -68,8 +77,6 @@ export default function CatSlug({params}: BlogCatParams) {
         
 
         <section className="flex flex-wrap gap-20 justify-center">
-
-
             {posts.map((post) =>{
                 return(
                     <div key={post.slug} className="bg-white shadow-md hover:shadow-lg hover:cursor-pointer transform hover:scale-105 transition-transform duration-300 m-4 p-5 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">

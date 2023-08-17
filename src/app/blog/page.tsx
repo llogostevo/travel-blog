@@ -18,7 +18,7 @@ export default function Blog() {
         <div>
             <div className="flex flex-row gap-4">
                         <div className="flex items-center">
-                            <button className="px-2 py-1 text-xs bg-teal hover:bg-nonphotblue text-white rounded">
+                            <button className="px-2 py-1 text-xs bg-red-500 hover:bg-nonphotblue text-white rounded">
                             <Link href={`/blog/`}><span>All</span></Link>
                             </button>
                         </div>
