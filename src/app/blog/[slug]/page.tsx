@@ -5,7 +5,7 @@ import { getPostBySlug, getPosts } from "@/lib/posts";
 import { notFound } from "next/navigation";
 
 
-type  BlogPostParams = {
+type BlogPostParams = {
     params: {
         slug: string;
     };
@@ -14,8 +14,8 @@ type  BlogPostParams = {
 // ************ FIX THIS HERE!!!! **************
 // this doesnt work at present. 
 type Post = {
-    title: string, 
-    slug: string, 
+    title: string,
+    slug: string,
     content: string,
     month: string,
     year: string,
@@ -23,11 +23,11 @@ type Post = {
 }
 
 // this builds all the params for ALL blog posts when the website is deployed
-export function generateStaticParams(){
+export function generateStaticParams({ params }: BlogPostParams) {
     const posts = getPosts()
 
     // generateStaticParams expcts you to output an array of objects, containing the 
-    return posts.map((post)=>{
+    return posts.map((post) => {
         return {
             slug: post.slug,
         };
@@ -35,7 +35,7 @@ export function generateStaticParams(){
 }
 
 export default function BlogPostPage({ params }: BlogPostParams) {
-    
+
     const post = getPostBySlug(params.slug)
     console.log(post);
 
@@ -47,27 +47,27 @@ export default function BlogPostPage({ params }: BlogPostParams) {
     return (
         <main>
             <div className='px-20 border bg-[#fafef] shadow rounded-lg mb-10'>
-            <section className='mb-20'>
-                <h1 className={`${dancing_script.className} text-4xl font-bold tracking-tighter -skew-y-3`} >{post?.title}</h1>
-                <h2 className={`${dancing_script.className} text-2xl font-bold tracking-tighter -skew-y-3`} >{post?.month} {post?.year}</h2>
-            </section>
+                <section className='mb-20'>
+                    <h1 className={`${dancing_script.className} text-4xl font-bold tracking-tighter -skew-y-3`} >{post?.title}</h1>
+                    <h2 className={`${dancing_script.className} text-2xl font-bold tracking-tighter -skew-y-3`} >{post?.month} {post?.year}</h2>
+                </section>
 
-            <section className=" px-10 grid grid-cols-2 gap-5">
-                <div>
-                    <Image
-                        className="mb-10 rounded-sm"
-                        src={`/images/${post.title}.jpg`}
-                        height={700}
-                        width={700}
-                        alt={`Blog Post ${post.title} Image`}
-                        // this doesnt work below
-                        placeholder="blur"
-                        blurDataURL="images/blur.jpg"
-                    />
-                </div>
-                <div>
-                    <p>{post?.content}</p>
-                    {/* THIS IS STATIC CONTENT AT THE MOMENT put this into an object */}
+                <section className=" px-10 grid grid-cols-2 gap-5">
+                    <div>
+                        <Image
+                            className="mb-10 rounded-sm"
+                            src={`/images/${post.title}.jpg`}
+                            height={700}
+                            width={700}
+                            alt={`Blog Post ${post.title.charAt(0).toLowerCase() + post.title.slice(1)} Image`}
+                            // this doesnt work below
+                            placeholder="blur"
+                            blurDataURL="images/blur.jpg"
+                        />
+                    </div>
+                    <div>
+                        <p>{post?.content}</p>
+                        {/* THIS IS STATIC CONTENT AT THE MOMENT put this into an object */}
                         <br />
                         <p className="italic underline">this is static below</p>
                         <h2 className="font-bold text-lg mb-4">✈️ A Whirlwind Journey Through Berlin! ✈️</h2>
@@ -91,9 +91,9 @@ export default function BlogPostPage({ params }: BlogPostParams) {
 
                         <h3 className="font-medium text-md mt-4 mb-2 ml-10">Final Thoughts:</h3>
                         <p className="ml-10">Berlin proved to be a delightful blend of old and new. Its resilience and transformation are evident in every corner. From its haunting history to its avant-garde art scene, Berlin promises an enriching experience for every traveler.</p>
-                </div>
+                    </div>
 
-            </section>
+                </section>
             </div>
 
         </main>
