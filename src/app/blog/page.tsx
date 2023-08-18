@@ -65,16 +65,13 @@ export default function Blog() {
                                     width={200}
                                     alt="Blog Post Image"
                                 />
-                                <p className="text-gray-700">{`${post.title}`}</p>
+                                <p className="text-gray-700">{`${post.content}`}</p>
                             </Link>
                         </div>
                     )
                 })}
 
             </section>
-
-
-
         </main>
     )
 }

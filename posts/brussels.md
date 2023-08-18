@@ -2,6 +2,7 @@
 title: "Brussels"
 date: 01/09/2023
 category: "interailing"
+content: "Brussels, known for its medieval town squares and rich gastronomy..."
 
 ---
 # The amazing adventures of... LloydLloyd?!?

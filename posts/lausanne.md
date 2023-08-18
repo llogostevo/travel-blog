@@ -2,6 +2,7 @@
 title: "Lausanne" 
 date: 01/09/2023
 category: "interailing"
+content: "Lausanne, with its terraced streets and the shimmering Lake Geneva, promised a ..."
 
 
 ---

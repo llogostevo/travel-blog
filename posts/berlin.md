@@ -2,6 +2,7 @@
 title: "Berlin"
 date: 01/09/2023
 category: "interailing"
+content: "Berlin, with its rich history and vibrant cultural scene..."
 
 
 ---

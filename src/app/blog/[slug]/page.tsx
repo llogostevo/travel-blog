@@ -42,6 +42,7 @@ export default function BlogPostPage({ params }: BlogPostParams) {
     if (!post) {
         notFound();
     }
+    console.log(post?.date)
 
     return (
         <main>
