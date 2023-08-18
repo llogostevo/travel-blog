@@ -1,13 +1,14 @@
 ---
 title: "Brussels"
-date: 01/09/2023
+date: 09/01/2023
 category: "interailing"
 content: "Brussels, known for its medieval town squares and rich gastronomy..."
 
 ---
-# The amazing adventures of... LloydLloyd?!?
 
 ![Brussels Journey](/images/brussels.jpg)
+
+# The amazing adventures of... LloydLloyd?!?
 
 ## Day 1: Touchdown in Brussels
 Brussels, known for its medieval town squares and rich gastronomy, had always intrigued me. Last month, I embarked on a week-long journey to discover the heart of Belgium.

@@ -4,8 +4,8 @@ import Image from "next/image";
 import { getPosts, getCategories } from "@/lib/posts";
 
 // content layer imports
-import { compareDesc, format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
+import { format } from "date-fns";
 
 
 export default function Blog() {
@@ -56,8 +56,9 @@ export default function Blog() {
                 {posts.map((post) => {
                     return (
                         <div key={post.slug} className="bg-white shadow-md hover:shadow-lg hover:cursor-pointer transform hover:scale-105 transition-transform duration-300 m-4 p-5 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">
-                            <Link className="flex flex-col items-center gap-10" href={`/blog/${post.slug}`}>
+                            <Link className="flex flex-col items-center gap-4" href={`/blog/${post.slug}`}>
                                 <h2 className={`${dancing_script.className} text-3xl font-bold`}>{`${post.title}`}</h2>
+                                <h2 className={`${dancing_script.className} text-sm font-bold -skew-y-3`} >{format(new Date(post?.date), 'dd-MM-yyyy')}</h2>
                                 <Image
                                     className="rounded"
                                     src={`/images/${post.title.charAt(0).toLowerCase() + post.title.slice(1)}.jpg`}
