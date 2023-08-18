@@ -62,7 +62,7 @@ export default function CatSlug({ params }: BlogCatParams) {
             </section>
 
             <section className='mb-20'>
-                <h1 className={`${dancing_script.className} text-4xl md:text-5xl font-bold tracking-tighter -skew-y-3`} >Blog Posts - <span className="text-teal">{params.catslug}</span></h1>
+                <h1 className={`${dancing_script.className} text-4xl md:text-5xl font-bold -skew-y-3`} >Blog Posts - <span className="text-teal">{params.catslug}</span></h1>
             </section>
 
             <section>
@@ -71,7 +71,7 @@ export default function CatSlug({ params }: BlogCatParams) {
             </section>
 
 
-
+{/* MAKE A COMPONENT */}
             <section className="flex flex-wrap gap-20 justify-center">
                 {posts.map((post) => {
                     return (
@@ -85,7 +85,7 @@ export default function CatSlug({ params }: BlogCatParams) {
                                     width={200}
                                     alt="Blog Post Image"
                                 />
-                                <p className="text-gray-700">{`${post.content}`}</p>
+                                <p className={`${dancing_script.className} text-center w-1/2`}>{`${post.content}`}</p>
                             </Link>
                         </div>
                     )

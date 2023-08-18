@@ -1,6 +1,6 @@
 ---
 title: "Cologne"
-date: 01/09/2023
+date: 08/12/2023
 category: "interailing"
 content: "From the moment I stepped out of the Cologne Central Station and the..."
 

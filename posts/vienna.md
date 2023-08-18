@@ -1,8 +1,8 @@
 ---
 title: "Vienna" 
-date: 01/09/2023
+date: 08/06/2023
 category: "interailing"
-content: "Milan, the fashion capital of the world and Italy's vibrant northern metropolis..."
+content: "Vienna, with its imperial palaces and rich musical history..."
 
 
 ---

@@ -53,7 +53,7 @@ export default function BlogPostPage({ params }: BlogPostParams) {
                     <h2 className={`${dancing_script.className} text-2xl mt-2 font-bold -skew-y-3`} >{format(new Date(post?.date), 'dd-MM-yyyy')}</h2>
                 </section>
 
-                <section className='mt-10'>
+                <section >
                         <div className="blog-post" key={post.slug}>
                             <div dangerouslySetInnerHTML = {{__html: post.body.html}}></div>
                         </div>
