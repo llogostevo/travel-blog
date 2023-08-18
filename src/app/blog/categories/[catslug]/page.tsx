@@ -62,12 +62,12 @@ export default function CatSlug({ params }: BlogCatParams) {
             </section>
 
             <section className='mb-20'>
-                <h1 className={`${dancing_script.className} text-4xl md:text-5xl font-bold -skew-y-3`} >Blog Posts - <span className="text-teal">{params.catslug}</span></h1>
+                <h1 className={`${dancing_script.className} text-4xl text-center md:text-left md:text-5xl font-bold -skew-y-3`} >Blog Posts - <span className="text-teal">{params.catslug}</span></h1>
             </section>
 
             <section>
-                <h2 className={`font-bold text-lg md:text-xl mb-4`}>✈️ Your Next Adventure Awaits! ✈️</h2>
-                <p className="mb-2 ml-10">Dive deep into our travel guides, tips, and tales. Whether you&apos;re looking for the next best place to dine in Paris, or trekking routes in the Andes, we&apos;ve got you covered. So grab your map, pack your bags, and let&apos;s embark on a journey together!</p>
+                <h2 className={`font-bold text-sm text-center sm:text-xl md:text-left md:text-2xl mb-4`}>✈️ Your Next Adventure Awaits! ✈️</h2>
+                <p className="mb-2 ml-0 md:ml-10">Dive deep into our travel guides, tips, and tales. Whether you&apos;re looking for the next best place to dine in Paris, or trekking routes in the Andes, we&apos;ve got you covered. So grab your map, pack your bags, and let&apos;s embark on a journey together!</p>
             </section>
 
 
