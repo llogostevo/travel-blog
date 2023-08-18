@@ -10,11 +10,9 @@ TODO
 
 - Need to add in metatags to blog page, individual blog pages
 
-- styling of mobile view for posts and categories page
 
 - sort by date, sort by views toggle
 
-- generate static params needs correcting on blog and cats
 
 - add a views counter for each post
 
@@ -25,6 +23,7 @@ TODO
 - need to use a database to contain the detail for each blog card.
 
 
+
 DONE
 - need to make cards responsive (DONE)
 - need to make blog posts dynamic from a file / variable
@@ -33,3 +32,5 @@ DONE
 - error on live version with images on posts pages
 - need to make posts page responsive
 - need to create an object to hold blog days for a visit to a location
+- styling of mobile view for posts and categories page
+- generate static params needs correcting on blog and cats
