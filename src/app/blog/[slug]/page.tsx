@@ -37,7 +37,6 @@ export function generateStaticParams({ params }: BlogPostParams) {
 export default function BlogPostPage({ params }: BlogPostParams) {
 
     const post = getPostBySlug(params.slug)
-    console.log(post);
 
     // this doesn't work, its is always undefined at present
     if (!post) {
