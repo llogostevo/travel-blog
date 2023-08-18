@@ -5,7 +5,7 @@ category: "interailing"
 
 
 ---
-# An Enchanting Day in Lausanne!
+# On a Swiss roll!
 
 ![Lausanne Exploration](/images/lausanne.jpg)
 

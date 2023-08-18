@@ -5,7 +5,7 @@ category: "interailing"
 
 
 ---
- # A Day of Discovery in Cologne!
+ # Bijan for Men??? Hombre?!
 
 ![Cologne Adventure](/images/cologne.jpg)
 
