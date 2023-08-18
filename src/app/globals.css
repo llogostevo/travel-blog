@@ -9,6 +9,19 @@ section {
   @apply mb-5;
 }
 
+blog-post {
+  @apply grid gap-4 items-center;
+}
+
+blog-post, h1 {
+  @apply text-2xl mt-2 -skew-y-3; 
+}
+blog-post, img {
+  @apply rounded-md h-[40vh] w-auto object-cover mx-auto my-auto;
+}
+blog-post, h2 {
+  @apply text-xl mt-2;
+}
 
 /* :root {
   --foreground-rgb: 0, 0, 0;

@@ -3,6 +3,10 @@ import { dancing_script } from "../layout";
 import Image from "next/image";
 import { getPosts, getCategories } from "@/lib/posts";
 
+// content layer imports
+import { compareDesc, format, parseISO } from 'date-fns'
+import { allPosts, Post } from 'contentlayer/generated'
+
 
 export default function Blog() {
 
@@ -61,7 +65,7 @@ export default function Blog() {
                                     width={200}
                                     alt="Blog Post Image"
                                 />
-                                <p className="text-gray-700">{`${post.content}`}</p>
+                                <p className="text-gray-700">{`${post.title}`}</p>
                             </Link>
                         </div>
                     )

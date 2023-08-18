@@ -38,7 +38,7 @@ export default function BlogPostPage({ params }: BlogPostParams) {
 
     const post = getPostBySlug(params.slug)
 
-    // this doesn't work, its is always undefined at present
+    // this presents a dark mode post at moment
     if (!post) {
         notFound();
     }
@@ -49,35 +49,13 @@ export default function BlogPostPage({ params }: BlogPostParams) {
                 <section className='mb-20'>
 
                     <h1 className={`${dancing_script.className} text-4xl md:text-5xl font-bold -skew-y-3`} >{post?.title}</h1>
-                    <h2 className={`${dancing_script.className} text-2xl mt-2 font-bold -skew-y-3`} >{post?.month} {post?.year}</h2>
+                    <h2 className={`${dancing_script.className} text-2xl mt-2 font-bold -skew-y-3`} >{post?.date}</h2>
                 </section>
 
-                <section className=" px-10 grid grid-cols-2 gap-5">
-                    <div>
-                        <Image
-                            className="mb-10 rounded-sm"
-                            src={`/images/${post.title.charAt(0).toLowerCase() + post.title.slice(1)}.jpg`}
-                            height={700}
-                            width={700}
-                            alt={`Blog Post ${post.title} Image`}
-                            // this doesnt work below
-                            placeholder="blur"
-                            blurDataURL="images/blur.jpg"
-                        />
-                    </div>
-                    <div>
-                        
-                        <div key={post.slug}>
-                            {/* <h2 className="font-bold text-lg mb-4">{post.title}</h2> */}
-                            {post.blogTitle.map((title, index) => (
-                                <div key={index} className="my-4"> {/* "my-4" is for margin on the y-axis (top & bottom) */}
-                                    <h3 className={`${dancing_script.className} font-bold  text-2xl mt-4 mb-2 ml-3`}>{title}</h3>
-                                    <p className="ml-10 mb-4">{post.blogDescription[index]}</p>
-                                </div>
-                            ))}
+                <section>
+                        <div className="prose blog-post"key={post.slug}>
+                            <div  dangerouslySetInnerHTML = {{__html: post.body.html}}></div>
                         </div>
-                       </div>
-
                 </section>
             </div>
 
