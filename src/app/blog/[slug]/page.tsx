@@ -24,15 +24,12 @@ type Post = {
 }
 
 // this builds all the params for ALL blog posts when the website is deployed
-export function generateStaticParams({ params }: BlogPostParams) {
+export function generateStaticParams() {
     const posts = getPosts()
 
-    // generateStaticParams expcts you to output an array of objects, containing the 
-    return posts.map((post) => {
-        return {
+    return posts.map((post) => ({
             slug: post.slug,
-        };
-    });
+    }));
 }
 
 export default function BlogPostPage({ params }: BlogPostParams) {

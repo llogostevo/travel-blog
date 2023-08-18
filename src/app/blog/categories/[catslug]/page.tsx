@@ -11,16 +11,12 @@ type BlogCatParams = {
     }
 }
 
-// this builds all the params for ALL blog posts when the website is deployed
-export function generateStaticParams({ params }: BlogCatParams) {
-    const categories = getCategories();
+export function generateStaticParams() {
+    const categories = getCategories()
 
-    // generateStaticParams expcts you to output an array of objects 
-    return categories.map((category) => {
-        return {
-            catslug: category,
-        };
-    });
+    return categories.map((category) => ({
+         catslug: category,
+    }));
 }
 
 export default function CatSlug({ params }: BlogCatParams) {
