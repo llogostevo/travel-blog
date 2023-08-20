@@ -34,3 +34,9 @@ DONE
 - need to create an object to hold blog days for a visit to a location
 - styling of mobile view for posts and categories page
 - generate static params needs correcting on blog and cats
+
+DATES
+https://date-fns.org/docs/Getting-Started
+
+CONTENT
+https://www.contentlayer.dev/
