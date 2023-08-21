@@ -1,7 +1,9 @@
+import { WEBSITE_URL} from "config"
+
 import { dancing_script } from "@/app/layout";
 
 export default async function Comments({ slug }: { slug: string }) {
-    const commentsRes = await fetch(`http://localhost:3000/api/comments/${slug}`, { next: { revalidate: 5 } });
+    const commentsRes = await fetch(`${WEBSITE_URL}/api/comments/${slug}`, { next: { revalidate: 5 } });
     const comments = await commentsRes.json();
 
     return (

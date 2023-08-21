@@ -1,4 +1,3 @@
-import { WEBSITE_URL} from "config"
 
 import short from "short-uuid";
 import { kv } from "@vercel/kv";
