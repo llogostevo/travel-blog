@@ -4,6 +4,7 @@ import { getPostBySlug, getPosts } from "@/lib/posts";
 import { compareDesc, format, parseISO } from 'date-fns'
 
 import { notFound } from "next/navigation";
+import Comments from "@/components/Comments";
 
 
 type BlogPostParams = {
@@ -56,7 +57,7 @@ export default function BlogPostPage({ params }: BlogPostParams) {
                         </div>
                 </section>
             </div>
-
+            <Comments />
         </main>
     )
 }
