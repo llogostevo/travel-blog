@@ -1,4 +1,4 @@
-import { getComment } from "@/lib/comments";
+import { getComments, saveComment } from "@/lib/comments";
 
 import { NextRequest, NextResponse} from "next/server"
 
@@ -12,12 +12,18 @@ type BlogPostParams = {
 export async function GET(request: NextRequest, {params}: BlogPostParams){
 
     // get comments
-    const comments = getComment(params.slug)
+    const comments = await getComments(params.slug)
 
     //return the comments
-    return NextResponse.json({comments});
+    return NextResponse.json(comments);
 }
 
-export async function POST(){
-    
+export async function POST(request: NextRequest, {params}: BlogPostParams){
+    const form = await request.formData();
+
+    const username = form.get("username") as string;
+    const comment = form.get("comment") as string;
+
+    await saveComment(username, comment, params.slug)
+    return NextResponse.json("Comment Saved")
 }

@@ -57,7 +57,8 @@ export default function BlogPostPage({ params }: BlogPostParams) {
                         </div>
                 </section>
             </div>
-            <Comments />
+            {/* @ts-ignore */}
+            <Comments slug={params.slug}/>
         </main>
     )
 }
