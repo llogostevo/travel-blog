@@ -37,9 +37,7 @@ export default function CommentForm({ slug, username }: { slug: string; username
         formData.append("username", username)
         formData.append("comment", comment)
 
-        // this needs ignore as producing error, clears out the comment from the form once completed the above. 
-            //  @ts-ignore
-            event.target.comment.value = "";
+        
 
         //make the api call
             // set the options that will be used in the fetch
@@ -50,7 +48,9 @@ export default function CommentForm({ slug, username }: { slug: string; username
             const res = await fetch(`${WEBSITE_URL}/api/comments/${slug}`, options)
 
             
-            
+            // this needs ignore as producing error, clears out the comment from the form once completed the above. 
+            //  @ts-ignore
+            event.target.comment.value = "";
             // refresh the current route and fetch new data from the server without losing the client side browser or react state
             // takes a callback as a parameter
             startTransition(() => {
