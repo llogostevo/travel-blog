@@ -1,5 +1,15 @@
- import { allPosts as POSTS } from 'contentlayer/generated'
+ import { supabase } from '@/utils/supabase';
+import { allPosts as POSTS } from 'contentlayer/generated'
 
+
+export async function getSupaPosts(){
+    const {data: posts} = await supabase
+    .from('blogposts')
+    .select('id, title, quote, date, slug, category, content')
+
+    return posts; 
+}
+ 
 
 
 // get all posts (simulating an API or database)

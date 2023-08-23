@@ -4,15 +4,24 @@ import { Database } from "@/types/supabaseTypes";
 import Link from "next/link";
 import { dancing_script, inter } from "../layout";
 import Image from "next/image";
+import { getSupaPosts } from "@/lib/posts";
 
 export default async function Posts() {
     
-    const {data: posts} = await supabase
-    .from('blogposts')
-    .select('id, title, quote, date, slug, category, content')
+    // const {data: posts} = await supabase
+    // .from('blogposts')
+    // .select('id, title, quote, date, slug, category, content')
+
+    // CHECK THIS
+    /*
+    because the getSupaPosts() function is a promoise we need to use await?
+    */
+   const posts = await getSupaPosts();
 
     // loop through the category array using the terneary operator and return the new array or an empty array
+
     const categoryArray = posts ? posts.map((post) => post.category) : [];
+    // const categoryArray = []
 
     // create a new unique set from the categoryArray categories
     const categories = Array.from(new Set(categoryArray))
