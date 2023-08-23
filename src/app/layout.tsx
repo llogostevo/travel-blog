@@ -9,6 +9,7 @@ export const inter = Inter({ subsets: ['latin'] })
 export const dancing_script = Dancing_Script({ subsets: ['latin'],})
 
 
+import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata: Metadata = {
   title: 'Wanderlust Chronicles',
@@ -22,15 +23,20 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
-      <body className={inter.className}>
-        <Header />
+    <ClerkProvider>
 
-        {children}
+      <html lang="en">
+        <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+        <body className={inter.className}>
+          <Header />
 
-        <Footer />
-        </body>
-    </html>
+          {children}
+
+          <Footer />
+          </body>
+      </html>
+
+    </ClerkProvider>
+
   )
 }
