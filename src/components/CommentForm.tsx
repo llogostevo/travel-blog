@@ -58,9 +58,11 @@ export default function CommentForm({ slug, username }: { slug: string; username
     return (
         <form className="w-full mt-10" onSubmit={handleFormSubmit} >
             <div className="flex flex-col gap-4 items-center border-b border-teal py-2">
-                <p>Commenting as: </p>
-                <input className="appearance-none bg-transparent border-b border-teal py-2 w-full text-gray-700 mr-3 px-2 leading-tight focus:outline-none" type="text" placeholder={`Commenting as: ${username}`} value={username} name="username" disabled aria-label="Username" />
-                <textarea className="appearance-none bg-transparent border-none sm:30 md:h-60 lg:h-80 w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Your comment..." name="comment" aria-label="Comment"></textarea>
+               
+                <label className="w-full text-gray-500 mr-3 leading-tight focus:outline-none" htmlFor="username">Commenting as: </label>
+                <input className="appearance-none  italic bg-transparent border-b border-teal pb-2 w-full text-gray-200 mr-3 px-2 leading-tight focus:outline-none" type="text" placeholder={`Commenting as: ${username}`} value={username} name="username" disabled aria-label="Username" />
+               
+                <textarea className="appearance-none bg-transparent border-none sm:30 md:h-60 lg:h-80 w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Your comment..." name="comment" aria-label="Comment" required></textarea>
                 <button className="flex-shrink-0 bg-teal hover:bg-nonphotblue hover:bg-photo text-sm text-white py-1 px-2 rounded" type="submit">
                     Add Comment
                 </button>
