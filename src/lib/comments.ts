@@ -1,5 +1,5 @@
 
-import short from "short-uuid";
+import  short  from "short-uuid";
 import { kv } from "@vercel/kv";
 
 export async function saveComment(username: string, comment: string, slug: string) {
