@@ -16,6 +16,7 @@ export default async function Comments({ slug }: { slug: string }) {
     try {
         const commentsRes = await fetch(`${WEBSITE_URL}/api/comments/${slug}`, { next: { revalidate: 1 } });
         comments = await commentsRes.json();
+        console.log("did this")
     } catch (err) {
         console.log(err)
     }
