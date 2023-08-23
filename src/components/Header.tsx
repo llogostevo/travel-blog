@@ -1,6 +1,8 @@
 
 import { dancing_script } from '@/app/layout'
 import Link from 'next/link'
+import { UserButton } from "@clerk/nextjs";
+
 
 export default function Header() {
   return (
@@ -11,6 +13,7 @@ export default function Header() {
             <ul className="flex gap-x-10">
                 <li className="hover:cursor-pointer hover:underline-offset-8 decoration-4 decoration-teal hover:underline"><Link href="/">🏠 <span>Home</span> 🏠</Link></li>
                 <li className="hover:cursor-pointer hover:underline-offset-8 decoration-4 decoration-teal hover:underline"><Link href="/blog">🌎 <span>Blog Posts</span> 🌎</Link></li>
+                <li><UserButton afterSignOutUrl="/"/> </li>
             </ul>
         </nav>
         <div className="inline-block relative pb-2">
