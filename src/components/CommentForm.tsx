@@ -37,6 +37,10 @@ export default function CommentForm({ slug, username }: { slug: string; username
         formData.append("username", username)
         formData.append("comment", comment)
 
+        // this needs ignore as producing error, clears out the comment from the form once completed the above. 
+            //  @ts-ignore
+            event.target.comment.value = "";
+
         //make the api call
             // set the options that will be used in the fetch
             const options = {body: formData, method: "POST"}
@@ -45,7 +49,8 @@ export default function CommentForm({ slug, username }: { slug: string; username
             // the formData object handles the headers for the fetch api
             const res = await fetch(`${WEBSITE_URL}/api/comments/${slug}`, options)
 
-    
+            
+            
             // refresh the current route and fetch new data from the server without losing the client side browser or react state
             // takes a callback as a parameter
             startTransition(() => {
@@ -60,7 +65,7 @@ export default function CommentForm({ slug, username }: { slug: string; username
             <div className="flex flex-col gap-4 items-center border-b border-teal py-2">
                
                 <label className="w-full text-gray-500 mr-3 leading-tight focus:outline-none" htmlFor="username">Commenting as: </label>
-                <input className="appearance-none  italic bg-transparent border-b border-teal pb-2 w-full text-gray-200 mr-3 px-2 leading-tight focus:outline-none" type="text" placeholder={`Commenting as: ${username}`} value={username} name="username" disabled aria-label="Username" />
+                <input className="appearance-none  italic bg-transparent border-b border-teal pb-2 w-full text-gray-200 mr-3 px-2 leading-tight focus:outline-none" type="text" value={username} name="username" disabled aria-label="Username" />
                
                 <textarea className="appearance-none bg-transparent border-none sm:30 md:h-60 lg:h-80 w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" placeholder="Your comment..." name="comment" aria-label="Comment" required></textarea>
                 <button className="flex-shrink-0 bg-teal hover:bg-nonphotblue hover:bg-photo text-sm text-white py-1 px-2 rounded" type="submit">
